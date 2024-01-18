@@ -4,11 +4,11 @@ root.title("To-Do List App")
 root.configure(bg="black")
 root.geometry("450x500")
 root.resizable(False,False)
-label=Label(root,text=0, width=10, bg="white", fg="magenta", font=10)
+label=Label(root,text=0, width=10, bg="white", fg="magenta", font=("Helvetica",13))
 label.pack(pady=10)
 listbox = Listbox(root, width=30, height=8, selectbackground="magenta" ,selectforeground="black",bg="pink" ,fg="purple",font=("Helvetica", 14))
 listbox.pack(pady=10)
-entry_label=Label(root,text="Enter The Task:", width=10, bg="black", fg="white")
+entry_label=Label(root,text="Enter The Task:", width=12, bg="black", fg="white",font=("Helvetica",10))
 entry_label.pack()
 new_entry = Entry(root, width=50,  fg="blue")
 new_entry.pack(pady=10)
@@ -44,7 +44,7 @@ def green():
     label.config(fg="darkgreen")
 
 def yellow():
-    listbox.config(selectbackground="orange" ,selectforeground="black",bg="yellow" ,fg="red")
+    listbox.config(selectbackground="gold" ,selectforeground="black",bg="yellow" ,fg="red")
     label.config(fg="orange")
 
 add_btn = Button(root, text="Add Task", width=20, command=add)
@@ -55,10 +55,12 @@ delete_btn.pack(pady=5)
 
 clear_btn=Button(root, text="Clear all", width=20, command=clear)
 clear_btn.pack(pady=5)
-colors=Label(root,text="CHOOSE A COLOR:",bg="black",fg="white")
-colors.pack()
-Button(root, text="PINK",width=20,command=pink).pack(side=LEFT)
-Button(root, text="GREEN",width=20,command=green).pack(side=LEFT)
-Button(root, text="yellow",width=20,command=yellow).pack(side=LEFT)
+
+colors=Label(root,text="Choose A Color:",bg="black",fg="white",font=("Helvetica",10))
+colors.pack(pady=5)
+
+Button(root, text="PINK",width=17,command=pink, fg="magenta").pack(side=LEFT,padx=10)
+Button(root, text="GREEN",width=17,command=green, fg="green").pack(side=LEFT,padx=10)
+Button(root, text="YELLOW",width=17,command=yellow, fg="orange").pack(side=LEFT,padx=10)
 
 root.mainloop()
