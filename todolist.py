@@ -1,17 +1,28 @@
 from tkinter import *
+import tkinter as tk
+import os
 root = Tk()
 root.title("To-Do List App")
 root.configure(bg="black")
 root.geometry("450x500")
 root.resizable(False,False)
+
+icon_path=os.path.abspath("C:\\Users\\hp\\Desktop\\dev\\mini projet1\\mini-projet\\icon.png")
+icon= tk.PhotoImage(file=icon_path)
+root.iconphoto(False, icon)
+
 label=Label(root,text=0, width=10, bg="white", fg="magenta", font=("Helvetica",13))
 label.pack(pady=10)
+
 listbox = Listbox(root, width=30, height=8, selectbackground="magenta" ,selectforeground="black",bg="pink" ,fg="purple",font=("Helvetica", 14))
 listbox.pack(pady=10)
+
 entry_label=Label(root,text="Enter The Task:", width=12, bg="black", fg="white",font=("Helvetica",10))
 entry_label.pack()
+
 new_entry = Entry(root, width=50,  fg="blue")
 new_entry.pack(pady=10)
+
 nbr=0
 def add():
     global nbr
